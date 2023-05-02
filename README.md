@@ -1,7 +1,7 @@
 # STOP-WATCH
 Brought required elements witheir ids to do functionalities.
 taken count as -1 initially as i am calling setInterval function every 10ms when count reaches to 100,
-container shakes with addition of extra letter in the millisec count display
+container shakes with addition of extra letter in the millisec count display.
 timer variable is a game changer here with that presence you cannot let start button do its action again when it is on. so that timer will not go crazy like increasing timer count speed everytime you click on start button.
 i am using setInterval inside start button only so for that i am taking interval null globally.
 start button click event happening when that happening, start function address is referred.
