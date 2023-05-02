@@ -13,7 +13,7 @@ let count = -1;
 // cannot let start button do its action again when it is on. so that timer will not go crazy like increasing timer count
 //speed everytime you click on start button.
 
-let timer=false;
+let timer=false; let resetAccess=false;
 // i am using setInterval inside start button only so for that i am taking interval null globally.
 let interval=null;
 
@@ -26,8 +26,10 @@ startBtn.addEventListener("click",()=>{
     }
     // making timer to true,you are disabling start counter until stop or reset is clicked
     timer=true;
+  //  resetAccess=true;
 })
 function start(){
+   // resetAccess=false;
     count++;
     // start counter put conditions with the time change to defferentiate with seconds,minutes,hours.
 
@@ -69,25 +71,30 @@ function start(){
 stopBtn.addEventListener("click",()=>{
     // now making timer to false to enable start btn
     timer=false;
+    resetAccess=true;
     // disabling the interval functionality
-    clearInterval(interval)});
+    clearInterval(interval)
+});
+
 resetBtn.addEventListener("click",()=>{
     // below comment if you set to true after start button is enabled, reset button also have access to stop timer 
     //but i am making the flow from start>>>>stop>>>>reset
     // i.e after clicking start if you click only stop then reset is enabled. if not with timer is true, 
     // reset also stops the start button functionality
 
-// timer=false;
-   if(!timer){
+ timer=false;
+   if(resetAccess==true){
     clearInterval(interval);
-   }
+   
 //    making count seconds minutes hours to their default values.
     count=-1;
     seconds=0;
     minutes=0;
     hours=0;
+   
     document.getElementById("sec").innerHTML="00:";
     document.getElementById("min").innerHTML="00:";
     document.getElementById("hr").innerHTML="00:";
     document.getElementById("count").innerHTML="00";
+   }
 })
