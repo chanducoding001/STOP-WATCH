@@ -70,10 +70,15 @@ function start(){
 }
 stopBtn.addEventListener("click",()=>{
     // now making timer to false to enable start btn
-    timer=false;
-    resetAccess=true;
+    
+    if(timer===true){
+        timer=false;
+        clearInterval(interval);
+        resetAccess=true;
+    }
+    
     // disabling the interval functionality
-    clearInterval(interval)
+    
 });
 
 resetBtn.addEventListener("click",()=>{
@@ -82,10 +87,11 @@ resetBtn.addEventListener("click",()=>{
     // i.e after clicking start if you click only stop then reset is enabled. if not with timer is true, 
     // reset also stops the start button functionality
 
- timer=false;
+ 
    if(resetAccess===true){
     clearInterval(interval);
-   
+    resetAccess=false;
+    timer=false;
 //    making count seconds minutes hours to their default values.
     count=-1;
     seconds=0;
