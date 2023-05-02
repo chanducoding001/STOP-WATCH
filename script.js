@@ -83,7 +83,7 @@ resetBtn.addEventListener("click",()=>{
     // reset also stops the start button functionality
 
  timer=false;
-   if(resetAccess==true){
+   if(resetAccess===true){
     clearInterval(interval);
    
 //    making count seconds minutes hours to their default values.
