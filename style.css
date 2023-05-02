@@ -50,13 +50,23 @@ h1 {
     background-color: indigo;
     border:2px solid indigo;
 }
-
+#start:hover{
+	background-color: black;
+	
+}
 #stop {
 	background-color: #0e85fc;
     border:2px solid #0e85fc;
 }
-
+#stop:hover{
+	background-color: yellow;
+	color:black;
+}
 #reset {
 	background-color: brown;
     border:2px solid brown;
+}
+#reset:hover{
+	background-color: silver;
+	color:black;
 }
